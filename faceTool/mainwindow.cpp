@@ -15,16 +15,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
 //bool isSplitButtonCliked = false;
 bool isBegin = false;   //控制是否开始读取视屏流
-long counter = 1;
-long dealCount = 0;
+bool isHandle = false;  //手动裁剪
+long counter = 2;
 void MainWindow::on_splitBuntton_clicked()
 {
-
+    if(isHandle == false)
+    {
+        isHandle = true;
+    }
 }
+
+
 void MainWindow::on_startButton_clicked()
 {
     if(isBegin == false)
@@ -75,14 +78,14 @@ void MainWindow::on_stopButton_clicked()
 
 }
 
+
 //点击＂下一张＂按钮，执行下一帧图片
 void MainWindow::on_nextButton_clicked()
 {
     //从视屏中读取特定帧frame
-   int fpInterval = 0;
-   fpInterval = ui->fpNumber->text().toInt(); //fpInterval  为获得的帧率
-   std::cout<<fpInterval<<endl;
-    //int fpInterval = 1;
+    int fpInterval = 30;
+    fpInterval = ui->fpNumber->text().toInt(); //fpInterval  为获得的帧率
+    std::cout<<fpInterval<<endl;
     counter = counter + fpInterval;
     cv::Mat frame = readVideo(counter);
     //把获得的frame送进网络处理,获得位置faceLoaction
@@ -115,9 +118,25 @@ void MainWindow::on_nextButton_clicked()
     ui->srcImage->show();
     //load end
 }
+/*------------------mouse caozuo ---------------------*/
+//--鼠标按下事件
 
+void MainWindow::mouseMoveEvent(QMouseEvent *e)//--鼠标移动事件
+{
+
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *e)	//--鼠标释放（松开）事件
+{
+
+}
+
+void MainWindow::mouseDoubleClickEvent(QMouseEvent *e)	//--鼠标双击事件
+{
+
+}
 void MainWindow::on_saveButton_clicked()
 {
-    dealCount += 1;
-    ui->dealNumber->setText(QString::number(dealCount));
+
 }
+

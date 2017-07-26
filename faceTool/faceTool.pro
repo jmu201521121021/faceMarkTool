@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    toolsfunction.cpp
+    toolsfunction.cpp \
+    myframeview.cpp
 
 HEADERS  += mainwindow.h \
-    toolbox.h
+    toolbox.h \
+    myframeview.h
 
 FORMS    += mainwindow.ui
 INCLUDEPATH += /usr/local/include \

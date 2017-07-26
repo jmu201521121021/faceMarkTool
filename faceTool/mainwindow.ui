@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1251</width>
-    <height>843</height>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>0</x>
       <y>0</y>
       <width>1251</width>
-      <height>791</height>
+      <height>741</height>
      </rect>
     </property>
     <property name="title">
@@ -29,8 +29,8 @@
     <widget class="QScrollArea" name="scrollArea">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>580</y>
+       <x>20</x>
+       <y>540</y>
        <width>1211</width>
        <height>191</height>
       </rect>
@@ -127,7 +127,11 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="fpNumber"/>
+         <widget class="QLineEdit" name="fpNumber">
+          <property name="text">
+           <string>10</string>
+          </property>
+         </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_4">
@@ -137,7 +141,11 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="dealNumber"/>
+         <widget class="QLineEdit" name="dealNUmber">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_6">
@@ -147,7 +155,11 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="wh"/>
+         <widget class="QLineEdit" name="wh">
+          <property name="text">
+           <string>255</string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="2" colspan="2">
          <widget class="QLabel" name="label_8">
@@ -259,23 +271,23 @@
       <string>裁剪后的图像</string>
      </property>
     </widget>
-    <widget class="QGraphicsView" name="srcImage">
+    <widget class="mygraphicsview" name="srcImage">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>50</y>
-       <width>751</width>
-       <height>521</height>
+       <width>701</width>
+       <height>481</height>
       </rect>
      </property>
     </widget>
     <widget class="QGraphicsView" name="resultImage">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>770</x>
        <y>50</y>
-       <width>441</width>
-       <height>521</height>
+       <width>461</width>
+       <height>481</height>
       </rect>
      </property>
     </widget>
@@ -302,6 +314,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>mygraphicsview</class>
+   <extends>QGraphicsView</extends>
+   <header>mygraphicsview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

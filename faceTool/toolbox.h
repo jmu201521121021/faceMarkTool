@@ -2,7 +2,6 @@
 #define TOOLBOX_H
 
 
-
 void loadPictureToLeftView(cv::Mat frame);
 void showFrame();
 void moveRectFrame();

@@ -1,17 +1,11 @@
 #include "mainwindow.h"
 #include "toolbox.h"
-
-
-//extern bool isSplitButtonCliked;
-
 //从视屏中读取帧，返回获取的帧,counter表示第几帧
 Mat readVideo(int counter)
 {
-    String videoPath = "/media/jinshan/0EA21AAE0EA21AAE/ubuntu/png/0000.avi";
-    //VideoCapture capture;
+    String videoPath = "/media/jinshan/0EA21AAE0EA21AAE/ubuntu/png/0108.avi";
     Mat frame;
     Mat dst;
-
     VideoCapture capture(videoPath);
     if(!capture.isOpened())
     {
@@ -19,10 +13,11 @@ Mat readVideo(int counter)
     }
     capture.set(CV_CAP_PROP_POS_FRAMES, counter);
     capture>>frame;
-    cv::resize(frame,dst,Size(751,521),(0,0),(0,0),INTER_CUBIC );
-    capture.release();
+   // capture.release();
+    cv::resize(frame, dst, Size(701,481));  //TODO:
     return dst;
 }
+
 //把当前帧送进opencv中检测
 vector<Rect> sendFrameToOpenCv(Mat frame)
 {
@@ -62,3 +57,9 @@ void moveRectFrame()
 {
 
 }
+
+//根据获得的位置(网络获得的人脸位置或者手动获得的人脸位置)产生框
+void createRect(vector<Rect> faceLocation)
+{
+}
+

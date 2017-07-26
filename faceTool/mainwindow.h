@@ -17,6 +17,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <QWidget>
+#include <QMainWindow>
+#include <QLabel>
+#include <QStatusBar>
+#include <QMouseEvent>
+#include <QTextCodec>
 #include "vector"
 using namespace cv;
 using namespace std;
@@ -43,10 +49,20 @@ private slots:
 
     void on_nextButton_clicked();
 
+
+
+
     void on_saveButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+
+protected:
+    //void mousePressEvent(QMouseEvent *e);	//--鼠标按下事件
+    void mouseMoveEvent(QMouseEvent *e);	//--鼠标移动事件
+    void mouseReleaseEvent(QMouseEvent *e);	//--鼠标释放（松开）事件
+    void mouseDoubleClickEvent(QMouseEvent *e);	//--鼠标双击事件
+
 };
 
 #endif // MAINWINDOW_H
