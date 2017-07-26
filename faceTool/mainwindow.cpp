@@ -19,12 +19,12 @@ MainWindow::~MainWindow()
 
 //bool isSplitButtonCliked = false;
 bool isBegin = false;   //控制是否开始读取视屏流
-long counter = 2;
+long counter = 1;
+long dealCount = 0;
 void MainWindow::on_splitBuntton_clicked()
 {
 
 }
-
 void MainWindow::on_startButton_clicked()
 {
     if(isBegin == false)
@@ -79,18 +79,11 @@ void MainWindow::on_stopButton_clicked()
 void MainWindow::on_nextButton_clicked()
 {
     //从视屏中读取特定帧frame
-   // string text = ui->fpNumber->text().toStdString();
-   // int fpInterval = std::atoi(text.c_str());
-
-   // string text = ui->fpNumber->text();
-    //std::cout<<ui->fpNumber->text().toInt()<<endl;
-    //int fpInterval = 0;
-   //fpInterval = ui->fpNumber->text().toInt(); //fpInterval  为获得的帧率
-    //std::cout<<fpInterval<<endl;
-
-    int fpInterval = 5;
+   int fpInterval = 0;
+   fpInterval = ui->fpNumber->text().toInt(); //fpInterval  为获得的帧率
+   std::cout<<fpInterval<<endl;
+    //int fpInterval = 1;
     counter = counter + fpInterval;
-    //std::cout<<counter<<endl;
     cv::Mat frame = readVideo(counter);
     //把获得的frame送进网络处理,获得位置faceLoaction
     if(ui->checkOpencv->isChecked())
@@ -121,4 +114,10 @@ void MainWindow::on_nextButton_clicked()
     ui->srcImage->setScene(sceneLeft);
     ui->srcImage->show();
     //load end
+}
+
+void MainWindow::on_saveButton_clicked()
+{
+    dealCount += 1;
+    ui->dealNumber->setText(QString::number(dealCount));
 }

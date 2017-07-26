@@ -4,27 +4,13 @@
 
 //extern bool isSplitButtonCliked;
 
-//void test()
-//{
-//    if(isSplitButtonCliked)
-//    {
-//        printf("ok!");
-//    }
-//}
-
-
 //从视屏中读取帧，返回获取的帧,counter表示第几帧
 Mat readVideo(int counter)
 {
-    String videoPath = "/home/liutao/workspace/ropeok/0108.avi";
+    String videoPath = "/media/jinshan/0EA21AAE0EA21AAE/ubuntu/png/0000.avi";
     //VideoCapture capture;
     Mat frame;
-
-//    CvCapture *video = cvCreateFileCapture(videoPath);
-//    cvSetCaptureProperty(video, CV_CAP_PROP_POS_FRAMES, counter);
-//    IplImage *tmp = cvQueryFrame(video);
-//    cvReleaseCapture(&tmp);
-//    frame = cv::Mat(tmp);
+    Mat dst;
 
     VideoCapture capture(videoPath);
     if(!capture.isOpened())
@@ -33,10 +19,10 @@ Mat readVideo(int counter)
     }
     capture.set(CV_CAP_PROP_POS_FRAMES, counter);
     capture>>frame;
-
-    return frame;
+    cv::resize(frame,dst,Size(751,521),(0,0),(0,0),INTER_CUBIC );
+    capture.release();
+    return dst;
 }
-
 //把当前帧送进opencv中检测
 vector<Rect> sendFrameToOpenCv(Mat frame)
 {
@@ -66,13 +52,6 @@ QImage changeFrameFormat(Mat frame)
                     QImage::Format_RGB888);
     return qImg;
 }
-
-
-//void loadPictureToLeftView(Mat frame)
-//{
-//    QImage qImg = changeFrameFormat(frame);
-
-//}
 
 void showFrame()
 {

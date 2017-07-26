@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1251</width>
-    <height>796</height>
+    <height>843</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>0</x>
       <y>0</y>
       <width>1251</width>
-      <height>741</height>
+      <height>791</height>
      </rect>
     </property>
     <property name="title">
@@ -29,8 +29,8 @@
     <widget class="QScrollArea" name="scrollArea">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>520</y>
+       <x>10</x>
+       <y>580</y>
        <width>1211</width>
        <height>191</height>
       </rect>
@@ -137,7 +137,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="dealNUmber"/>
+         <widget class="QLineEdit" name="dealNumber"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_6">
@@ -183,7 +183,7 @@
         <rect>
          <x>750</x>
          <y>0</y>
-         <width>252</width>
+         <width>267</width>
          <height>151</height>
         </rect>
        </property>
@@ -264,18 +264,18 @@
       <rect>
        <x>20</x>
        <y>50</y>
-       <width>741</width>
-       <height>471</height>
+       <width>751</width>
+       <height>521</height>
       </rect>
      </property>
     </widget>
     <widget class="QGraphicsView" name="resultImage">
      <property name="geometry">
       <rect>
-       <x>770</x>
+       <x>790</x>
        <y>50</y>
-       <width>461</width>
-       <height>471</height>
+       <width>441</width>
+       <height>521</height>
       </rect>
      </property>
     </widget>
@@ -287,7 +287,7 @@
      <x>0</x>
      <y>0</y>
      <width>1251</width>
-     <height>23</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>
