@@ -1,9 +1,13 @@
 #ifndef TOOLBOX_H
 #define TOOLBOX_H
-#include "mainwindow.h"
-void loadPictureToLeftView();
+
+
+
+void loadPictureToLeftView(cv::Mat frame);
 void showFrame();
 void moveRectFrame();
-void on_splitBuntton_clicked();
-QImage bgrTorgb(Mat frame); //bgr To rgb show in gridview
+QImage changeFrameFormat(Mat frame);
+vector<Rect> sendFrameToOpenCv(Mat frame);
+Mat readVideo(int counter);
+
 #endif // TOOLBOX_H

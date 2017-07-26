@@ -14,7 +14,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    toolbox.cpp
+    toolsfunction.cpp
 
 HEADERS  += mainwindow.h \
     toolbox.h
