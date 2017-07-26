@@ -15,6 +15,8 @@
 #include <QApplication>
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "vector"
 using namespace cv;
 using namespace std;
@@ -36,6 +38,10 @@ private slots:
     void on_splitBuntton_clicked();
 
     void on_startButton_clicked();
+
+    void on_stopButton_clicked();
+
+    void on_nextButton_clicked();
 
 private:
     Ui::MainWindow *ui;
